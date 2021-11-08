@@ -1,0 +1,3 @@
+moos,suhur,mari
+moos,mari,suhkur
+basi,basiilik,tomat
