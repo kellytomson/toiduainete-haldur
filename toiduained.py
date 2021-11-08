@@ -3,6 +3,7 @@ import datetime
 
 
 def lisa_toode(uus_toode, aasta, kuu, päev):
+
     kuupäev = str(datetime.date(aasta, kuu, päev))
     kuupäev_täna = str(datetime.date.today())
     rida = uus_toode + ' ' + ' ostetud:' + kuupäev_täna + ' aegub:' + kuupäev
@@ -11,18 +12,20 @@ def lisa_toode(uus_toode, aasta, kuu, päev):
     fail.write('\n' + rida)
     fail.close()
 
-
 def eemalda_toode(ei_toode):
     fail = open('toiduained.txt', 'r+', encoding='utf-8')
     read = fail.readlines()
     fail.seek(0)
     for rida in read:
-        toode = rida.split()[0]
-        if toode != ei_toode:
-            fail.write(rida)
+        if rida.strip() != "":
+            toode = rida.split()[0]
+            if toode != ei_toode:
+                fail.write(rida)
     # 'truncate' eemaldab kõik faili lõppu jäänud ülearused read
     fail.truncate()
     fail.close()
+    
+eemalda_toode("tomat")
 
 
 def eemalda_kõik_aegunud():
@@ -43,4 +46,10 @@ def eemalda_kõik_aegunud():
     fail.truncate()
     fail.close()
 
-print(lisa_toode('basiilik', 2021, 12, 5))
+def eemalda_tooted_retsepti_järgi(koostisosad):
+    for el in koostisosad:
+        eemalda_toode(el)
+        
+        
+        
+

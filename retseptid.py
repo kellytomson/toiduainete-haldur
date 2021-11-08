@@ -9,9 +9,9 @@ def lisa_retsept():
             break
     lisa_retsept_faili(retsept)
         
-def lisa_retsept_faili(x):
+def lisa_retsept_faili(x):#abi fun
     f = open("retseptid.txt", "a", encoding = "UTF-8")
-    f.write("\n" + x)
+    f.write(x+"\n")
     f.close()
  
 def eemalda_retsept(retsepti_nimi):
@@ -25,7 +25,7 @@ def eemalda_retsept(retsepti_nimi):
     f.truncate()
     f.close()
     
-def külmkapi_sisu():
+def külmkapi_sisu():#abi fun
     f = open("toiduained.txt", "r", encoding ="UTF-8")
     külmkapis = []
     for rida in f:
@@ -33,17 +33,17 @@ def külmkapi_sisu():
         külmkapis.append(toiduaine)
     return külmkapis
 
-def leia_retsepti_koostised(retsepti_nimi):
+def leia_retsepti_koostised(retsepti_nimi):#abi funktsioon, mis tagastab retsepti koostisosad
     f = open("retseptid.txt", "r", encoding = "UTF-8")
     read = f.readlines()
     f.seek(0)
     retsepti_nimi = retsepti_nimi.lower()
     for i in read:
             if i.split(",",1)[0] == retsepti_nimi:
-                return i.split(",",1)[1].split(",")
+                return i.strip().split(",",1)[1].split(",")
     f.close()
 
-def järjend_sõneks(y):
+def järjend_sõneks(y):#abi fun
     a = ""
     for i in range(len(y)):
         if a == "":
@@ -60,7 +60,14 @@ def kontrolli_toiduained(retsepti_nimi):
         if el not in külmkapp:
             puuduvad.append(el)
     if puuduvad != []:
-        print("Puuduvad toiduained on:", järjend_sõneks(puuduvad)".")
+        print("Puuduvad toiduained on:", järjend_sõneks(puuduvad))
     else:
         print("Kõik on olemas")
+        
+def vaata_retsepte():
+    f = open("retseptid.txt", "r", encoding = "UTF-8")
+    for rida in f:
+        print(rida.strip().replace(",",":",1))
+    f.close()
+
         
