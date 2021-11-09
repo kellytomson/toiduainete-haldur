@@ -6,7 +6,7 @@ def lisa_toode(uus_toode, aasta, kuu, päev):
     kuupäev = str(datetime.date(aasta, kuu, päev))
     kuupäev_täna = str(datetime.date.today())
     rida = uus_toode + ' ' + ' ostetud:' + kuupäev_täna + ' aegub:' + kuupäev
-    # Krijutame uue toiduaine koos aegumis-kuupäevaga faili
+    # Kirjutame uue toiduaine koos aegumis-kuupäevaga faili
     fail = open('toiduained.txt', 'a', encoding='utf-8')
     fail.write('\n' + rida)
     fail.close()
@@ -43,4 +43,4 @@ def eemalda_kõik_aegunud():
     fail.truncate()
     fail.close()
 
-lisa_toode('basiilik', 2021, 12, 5)
+#lisa_toode('basiilik', 2021, 12, 5)
