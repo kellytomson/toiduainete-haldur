@@ -11,7 +11,6 @@ def lisa_toode(uus_toode, aasta, kuu, päev):
     fail.write('\n' + rida)
     fail.close()
 
-
 def eemalda_toode(ei_toode):
     fail = open('toiduained.txt', 'r+', encoding='utf-8')
     read = fail.readlines()
@@ -23,7 +22,6 @@ def eemalda_toode(ei_toode):
     # 'truncate' eemaldab kõik faili lõppu jäänud ülearused read
     fail.truncate()
     fail.close()
-
 
 def eemalda_kõik_aegunud():
     fail = open('toiduained.txt', 'r+', encoding='utf-8')
@@ -43,4 +41,6 @@ def eemalda_kõik_aegunud():
     fail.truncate()
     fail.close()
 
-#lisa_toode('basiilik', 2021, 12, 5)
+def eemalda_tooted_retsepti_järgi(koostisosad):
+    for el in koostisosad:
+        eemalda_toode(el)

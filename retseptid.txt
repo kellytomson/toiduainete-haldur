@@ -1,0 +1,3 @@
+salat,basiilik,kurk,tomat
+pannkoogid,muna,jahu,suhkur,sool,piim
+pudru,kaer,suhkur
