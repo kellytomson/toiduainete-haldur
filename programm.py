@@ -8,7 +8,7 @@ while True:
     
     if sisend == "k":
         while True:
-            print("lisa toode = l\neemalda toode = e\neemalda kõik aegunud tooted =a\nlahku külmkapist = h") 
+            print("lisa toode = l\neemalda toode = e\neemalda kõik aegunud tooted = a\nlahku külmkapist = h") 
             valik = input("Sisesta soovitud tegevus: ")
             print()
             if valik == "l":
