@@ -1,17 +1,6 @@
-def lisa_retsept():
-    retsepti_nimi = input("Sisestage retsepti nimi: ").strip().lower()
-    retsept= retsepti_nimi
-    while True:
-        retsepti_koostisosa = input("Sisestage retsepti koostisosa(sisestamise lõpetamiseks, vajuta ENTER: ").strip().lower()
-        if not(retsepti_koostisosa == ""):
-            retsept+=","+retsepti_koostisosa
-        else:
-            break
-    lisa_retsept_faili(retsept)
-        
-def lisa_retsept_faili(x):#abi fun
+def lisa_retsept(pealkiri, koostisosad):
     f = open("retseptid.txt", "a", encoding = "UTF-8")
-    f.write(x+"\n")
+    f.write(pealkiri+','+ koostisosad +"\n")
     f.close()
  
 def eemalda_retsept(retsepti_nimi):

@@ -1,4 +1,5 @@
-porgand  ostetud:2021-11-05 aegub:2021-11-3
-tomat  ostetud:2021-11-05 aegub:2021-12-4
 basiilik  ostetud:2021-11-05 aegub:2021-12-05
-
+kana  ostetud:2021-12-04 aegub:2021-12-06
+maasikad  ostetud:2021-12-04 aegub:2021-12-22
+kurk  ostetud:2021-12-04 aegub:2021-12-12
+sidrun  ostetud:2021-12-04 aegub:2021-12-08
