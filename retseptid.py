@@ -1,7 +1,13 @@
+import os
+
+#võtab filepathiks antud faili kausta 
+os.chdir(os.path.dirname(os.path.abspath(__file__)))
+
 def lisa_retsept(pealkiri, koostisosad):
     f = open("retseptid.txt", "a", encoding = "UTF-8")
-    f.write(pealkiri+','+ koostisosad +"\n")
+    f.write(pealkiri + ', '+ koostisosad + "\n")
     f.close()
+    print('Retsept sai lisatud!')
  
 def eemalda_retsept(retsepti_nimi):
     f = open("retseptid.txt", "r+", encoding = "UTF-8")
@@ -13,6 +19,7 @@ def eemalda_retsept(retsepti_nimi):
                 f.write(i)
     f.truncate()
     f.close()
+    print('Retsept sai eemaldatud!')
     
 def külmkapi_sisu():#abi fun
     f = open("toiduained.txt", "r", encoding ="UTF-8")
@@ -56,5 +63,5 @@ def kontrolli_toiduained(retsepti_nimi):
 def vaata_retsepte():
     f = open("retseptid.txt", "r", encoding = "UTF-8")
     for rida in f:
-        print(rida.strip().replace(",",":",1))
+        return rida.strip().replace(",",":",1)
     f.close()

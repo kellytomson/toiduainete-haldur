@@ -1,6 +1,9 @@
 # Siin failis toimub kõik toiduainetega seoses
 import datetime
+import os
 
+#võtab filepathiks antud faili kausta 
+os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
 def lisa_toode(uus_toode, aasta, kuu, päev):
     kuupäev = str(datetime.date(aasta, kuu, päev))
@@ -40,8 +43,8 @@ def eemalda_kõik_aegunud():
             fail.write(rida_copy)
     fail.truncate()
     fail.close()
-    print('Kõik aegnunud tooted eemaldatud!')
 
 def eemalda_tooted_retsepti_järgi(koostisosad):
     for el in koostisosad:
         eemalda_toode(el)
+ 
